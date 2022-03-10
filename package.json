@@ -1,0 +1,14 @@
+{
+  "name": "nyc_tickets",
+  "version": "1.0.0",
+  "description": "web interface for checking government revenue operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "patrick cullinane",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
