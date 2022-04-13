@@ -45,25 +45,6 @@ async function getTotalCost(licensePlate) {
   return paymentAmount;
 }
 
-// individual data
-// get highest amount
-// map of where fines occurred 
-// output to csv
-// by time of day 
-
-// total data: "dumb querying"
-// total ticket revenue gen'd by year
-// person with most fines (don't display lic plate)
-// chloropleth map of fines
-// support for api key (to get more data)
-// output to csv
-
-// prediction support 
-// where you are most likely to get ticketed
-// what time you are most likely to get ticketed
-
-// UI: enter data into UI and get back info
-
 
 module.exports = {
   getParkingDataByLic,
