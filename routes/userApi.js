@@ -15,11 +15,13 @@ router.post('/searchplates', async (req, res) => {
     try {
         const licPlate = req.body.showSearchTerm;
         const getTotalCost = await tickets.getTotalCost(licPlate);
+		const getFirstOffence = await tickets.getFirstOffence(licPlate);
 
         res.render('tickets/searchresults', {
             title: 'total cost',
-            cost: getTotalCost
-        })
+            cost: getTotalCost,
+			minDate: getFirstOffence[0],
+			maxDate: getFirstOffence[1] })
 
     } catch(e) {
         res.status(404).json({error: e})

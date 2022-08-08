@@ -19,5 +19,14 @@ async function testTotalAmountByLicPlate() {
     }
 }
 
+async function testDateGrabber() {
+	try {
+		let getDates = await tickets.getFirstOffence('P91HUV')
+		console.log(getDates)
+	} catch(e) {
+		console.log(e)
+	}
+}
 //testLicensePlateDataRetrieval() 
-testTotalAmountByLicPlate() 
+//testTotalAmountByLicPlate() 
+testDateGrabber()

@@ -45,6 +45,23 @@ async function getTotalCost(licensePlate) {
   return paymentAmount;
 }
 
+async function getFirstOffence(licensePlate) {
+	let formatPlate = forceUpperCase(licensePlate);
+	
+	let apiData = await getApiData(formatPlate);
+
+	let dates = []
+	for (const [key,value] of Object.entries(apiData)) {
+		dates.push(new Date(value['issue_date']))
+	}
+
+	let maxDate = new Date(Math.max.apply(null,dates));
+	let minDate = new Date(Math.min.apply(null,dates));
+
+	return [minDate, maxDate]
+}
+
+
 // individual data
 // get highest amount
 // map of where fines occurred 
@@ -67,5 +84,6 @@ async function getTotalCost(licensePlate) {
 
 module.exports = {
   getParkingDataByLic,
-  getTotalCost
+  getTotalCost,
+  getFirstOffence
 };
