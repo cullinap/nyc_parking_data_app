@@ -61,6 +61,9 @@ async function getFirstOffence(licensePlate) {
 	return [minDate, maxDate]
 }
 
+async function 
+
+
 
 // individual data
 // get highest amount
