@@ -61,7 +61,7 @@ async function getFirstOffence(licensePlate) {
 	return [minDate, maxDate]
 }
 
-async function 
+//async function 
 
 
 
