@@ -57,26 +57,36 @@
 				padding: 1rem;
 				float: right;
 			}
+
+			div.background-image {
+				background: url('/public/img/nyc-img.jpg');
+				background-size: contain;
+			}
 	</style>
 </head>
-<body>
-	<header>
-		<top>
-			<a id="logo" href="/">NYC Parking App</a>
-		</top>
+	<body>
+		<div class="background-image">
+			<header>
+				<top>
+					<a id="logo" href="/">NYC Parking App</a>
+				</top>
 
-		<bottom> 
-		</bottom>
-	</header>
+				<bottom> 
+				</bottom>
+			</header>
+			<hero>
+				<left>
+					<h1>Ticket Calculator</h1>
+					{{{body}}}
+					<p id="totalAmount"></p>
+				</left>
 
-	<hero>
-		<left>
-			<h1>Ticket Calculator</h1>
-			{{{body}}}
-		</left>
+				<right>
+				</right>
+			</hero> 
+		</div>
 
-		<right>
-		</right>
-	</hero>
-</body>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="/public/js/searchplates.js"></script>
 </html>

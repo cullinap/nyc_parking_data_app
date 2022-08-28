@@ -58,8 +58,12 @@ async function getFirstOffence(licensePlate) {
 	let maxDate = new Date(Math.max.apply(null,dates));
 	let minDate = new Date(Math.min.apply(null,dates));
 
-	return [minDate, maxDate]
+	return [minDate.toDateString(), maxDate.toDateString()]
 }
+
+// async function() {
+
+// }
 
 //async function 
 
