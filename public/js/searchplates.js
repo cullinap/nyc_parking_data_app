@@ -2,6 +2,12 @@
 $(document).ready(function() {
 	const nycdatalink = "https://data.cityofnewyork.us/resource/nc67-uf89.json";
 	
+	function unique(arr) {
+		return $.grep(arr, function(el, index) {
+				return index === $.inArray(el, arr)
+		});
+	}
+	
 	$('#searchform').submit(function(event){
 		event.preventDefault();
 		let search_term = $('#search_plate').val().trim();
@@ -13,6 +19,7 @@ $(document).ready(function() {
 		$.getJSON(fullUrl, function(data) {
 			let paymentAmount = 0;
 			let dates = []
+			let years = []
 			$('#totalAmount').empty();
 			$('#minDate').empty();
 			$('#maxDate').empty();
@@ -30,6 +37,12 @@ $(document).ready(function() {
 			$('#totalAmount').append(paymentAmount);
 			$('#minDate').append('Your first ticket was on: ' + minDate.toDateString());
 			$('#maxDate').append('Your most recent ticket was on: ' + maxDate.toDateString());
+			
+			for(var [key,value] of Object.entries(dates)) {
+				years.push(value.getFullYear())
+			}
+			
+			console.log(unique(years))
 		});
 	})	
 })
