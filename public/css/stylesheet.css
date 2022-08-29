@@ -15,18 +15,12 @@
 }
 
 body {
-  /* color: hsl(0, 0%, calc(var(--text) * 11%)); */
-  background: url('/public/img/nyc-img.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 200px;
-  height: 100vh;
-  /* display: flex;
+  color: hsl(0, 0%, calc(var(--text) * 11%));
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 0px;
-  margin: 0px; */
+  margin: 0px; 
 }
 
 content {
@@ -205,4 +199,55 @@ shape {
   background-size: 10px 10px;
 }
 
+header {
+   display: flex;
+   flex-direction: column;
+   background-color: var(--value8);
+}
 
+header A#logo {
+	text-decoration: none;
+	font-size: 1.5em;
+}
+header > top {
+	display: flex;
+	padding: 0.5rem;
+	align-content: center;
+}
+
+header > bottom {
+	display: flex;
+	font-size: 0.8em;
+	justify-content: flex-end;
+	padding: 1rem;
+}
+
+header > bottom a
+{
+	margin-left: 2rem;
+	text-decoration: none;
+	height: min-content;
+}
+
+a#demo {
+	border-radius: 25px;
+	padding: 0.5rem;
+	border: 2px solid var(--value2);
+}
+
+hero {
+	display: flex;
+	padding: 1rem;
+	background-color: var(--value8);
+	padding-bottom: 4rem;
+}
+
+hero > left {
+	display: flex;
+	flex-direction: column;
+}
+
+hero > right {
+	padding: 1rem;
+	float: right;
+}

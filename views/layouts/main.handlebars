@@ -4,88 +4,26 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
     <link rel="stylesheet" href="/public/css/stylesheet.css"/>
-    <style>
-			header {
-			   display: flex;
-			   flex-direction: column;
-			   background-color: var(--value8);
-			}
-
-			header A#logo {
-				text-decoration: none;
-				font-size: 1.5em;
-			}
-			header > top {
-				display: flex;
-				padding: 0.5rem;
-				align-content: center;
-			}
-
-			header > bottom {
-				display: flex;
-				font-size: 0.8em;
-				justify-content: flex-end;
-				padding: 1rem;
-			}
-
-			header > bottom a
-			{
-				margin-left: 2rem;
-				text-decoration: none;
-				height: min-content;
-			}
-
-			a#demo {
-				border-radius: 25px;
-				padding: 0.5rem;
-				border: 2px solid var(--value2);
-			}
-
-			hero {
-				display: flex;
-				padding: 1rem;
-				background-color: var(--value8);
-				padding-bottom: 4rem;
-			}
-
-			hero > left {
-				display: flex;
-				flex-direction: column;
-			}
-
-			hero > right {
-				padding: 1rem;
-				float: right;
-			}
-
-			div.background-image {
-				background: url('/public/img/nyc-img.jpg');
-				background-size: contain;
-			}
-	</style>
 </head>
 	<body>
-		<div class="background-image">
-			<header>
-				<top>
-					<a id="logo" href="/">NYC Parking App</a>
-				</top>
+		<header>
+			<top>
+				<a id="logo" href="/">NYC Parking App</a>
+			</top>
 
-				<bottom> 
-				</bottom>
-			</header>
-			<hero>
-				<left>
-					<h1>Ticket Calculator</h1>
-					{{{body}}}
-					<p id="totalAmount"></p>
-				</left>
+			<bottom> 
+			</bottom>
+		</header>
+		<hero>
+			<left>
+				<h1>Ticket Calculator</h1>
+				{{{body}}}
+				<p id="totalAmount"></p>
+			</left>
 
-				<right>
-				</right>
-			</hero> 
-		</div>
-
+			<right>
+			</right>
+		</hero> 
 	</body>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="/public/js/searchplates.js"></script>

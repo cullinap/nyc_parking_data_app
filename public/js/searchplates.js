@@ -12,11 +12,18 @@ $(document).ready(function() {
 		
 		$.getJSON(fullUrl, function(data) {
 			let paymentAmount = 0;
+			let dates = []
 			for(const [key,value] of Object.entries(data)) {
 				paymentAmount += +value['payment_amount'];
 			}	  
-			console.log(paymentAmount);	
+			for(const [key,value] of Object.entries(data)) {
+				dates.push(new Date(value['issue_date'])) 
+			}
+		    let minDate = new Date(Math.min.apply(null,dates))		
+			let maxDate = new Date(Math.max.apply(null,dates))
+			console.log(minDate.toDateString());	
 			$('#totalAmount').append(paymentAmount);
+			$('#minDate').append(minDate);
 		});
 	})	
 })
