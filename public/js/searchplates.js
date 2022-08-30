@@ -42,7 +42,24 @@ $(document).ready(function() {
 				years.push(value.getFullYear())
 			}
 			
-			console.log(unique(years))
+			let ticketYears = unique(years).sort()
+		
+			let allYearsAmount = {}	
+			for(year of ticketYears){
+				console.log(typeof(year))
+				let yearAmount = 0 
+				for(var [key,value] of Object.entries(data)) {
+					tmp = new Date(value['issue_date'])
+					if (tmp.getFullYear() == year) {
+						yearAmount += +value['payment_amount']	
+					}
+				}
+				allYearsAmount[year] = yearAmount;
+			}
+
+			console.log(allYearsAmount)
+			//$('#yearAmount').append(yearAmount);
+
 		});
 	})	
 })
