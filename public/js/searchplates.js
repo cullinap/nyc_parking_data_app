@@ -23,6 +23,7 @@ $(document).ready(function() {
 			$('#totalAmount').empty();
 			$('#minDate').empty();
 			$('#maxDate').empty();
+			$('#ticketYears').empty();
 
 			for(const [key,value] of Object.entries(data)) {
 				paymentAmount += +value['payment_amount'];
@@ -46,7 +47,6 @@ $(document).ready(function() {
 		
 			let allYearsAmount = {}	
 			for(year of ticketYears){
-				console.log(typeof(year))
 				let yearAmount = 0 
 				for(var [key,value] of Object.entries(data)) {
 					tmp = new Date(value['issue_date'])
@@ -57,9 +57,14 @@ $(document).ready(function() {
 				allYearsAmount[year] = yearAmount;
 			}
 
-			console.log(allYearsAmount)
-			//$('#yearAmount').append(yearAmount);
-
+			$('#ticketYears').append(`<p>Breakdown By Year</p>`)
+			for(const [key, value] of Object.entries(allYearsAmount)){
+				$('#ticketYears')
+				.append(
+					`<li>${key}: $ ${value}</li>`				
+				)
+			}
+			
 		});
 	})	
 })
