@@ -35,7 +35,7 @@ $(document).ready(function() {
 		    let minDate = new Date(Math.min.apply(null,dates))		
 			let maxDate = new Date(Math.max.apply(null,dates))
 
-			$('#totalAmount').append(paymentAmount);
+			$('#totalAmount').append('Total Amount: $' + paymentAmount.toLocaleString());
 			$('#minDate').append('Your first ticket was on: ' + minDate.toDateString());
 			$('#maxDate').append('Your most recent ticket was on: ' + maxDate.toDateString());
 			
@@ -61,7 +61,7 @@ $(document).ready(function() {
 			for(const [key, value] of Object.entries(allYearsAmount)){
 				$('#ticketYears')
 				.append(
-					`<li>${key}: $ ${value}</li>`				
+					`<li>${key}: $${value.toLocaleString()}</li>`				
 				)
 			}
 			
