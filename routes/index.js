@@ -1,4 +1,4 @@
-const userApiRoutes = require("./UserApi");
+const userApiRoutes = require("./userApi");
 
 const constructorMethod = (app) => {
   app.use("/", userApiRoutes);
